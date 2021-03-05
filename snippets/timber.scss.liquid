@@ -1,0 +1,27 @@
+.site-nav--dropdown{
+  overflow:initial;
+}
+
+.grand .icon-arrow-down{
+  -ms-transform: rotate(-90deg); /* IE 9 */      
+  -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+  transform: rotate(-90deg);
+}
+
+.site-nav li.grand{
+  position:relative;
+}
+
+.site-nav--dropdown--sub{
+  position:absolute; 
+  display:none; 
+  min-width: 160px;
+  right: -160px;
+  top: -1px;
+  border: 1px solid $colorBorder;
+  background-color: $colorBody;
+}
+
+.site-nav li.grand:hover > .site-nav--dropdown--sub{
+  display:block;
+}

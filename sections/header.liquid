@@ -55,12 +55,19 @@
   {% endif %}
 
   <header class="site-header{% if section.settings.align_logo == 'left' %} border-bottom logo--left{% else %} logo--center{% endif %}" role="banner">
+
+    
     <div class="grid grid--no-gutters grid--table site-header__mobile-nav">
+      
+      
+      
       {% if section.settings.align_logo == 'center' %}
         {%- assign logo_classes = 'medium-up--one-third medium-up--push-one-third logo-align--center' -%}
       {% else %}
         {%- assign logo_classes = 'medium-up--one-quarter logo-align--left' -%}
       {% endif %}
+      
+      
 
       <div class="grid__item {{ logo_classes }}">
         {% comment %}
@@ -101,12 +108,44 @@
           </div>
         {% endif %}
       </div>
+      
+       
+    {% if section.settings.align_logo == 'left' %}
+<nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
+<form class=search action="{{ routes.search_url }}" method="get" role="search" class="search-form search-page-form">
+<div class="input-group input-group--nowrap">
+<div class="input-group__field input-group__field--connected search-form__input-wrapper">
+<input
+type="search"
+name="q"
+value="{{ search.terms | escape }}"
+placeholder="{{ 'general.search.placeholder' | t }}"
+role="combobox"
+aria-autocomplete="list"
+aria-owns="predictive-search-results"
+aria-expanded="false"
+aria-label="{{ 'general.search.placeholder' | t }}"
+aria-haspopup="listbox"
+class="search-form__input"
+data-search-page-predictive-search-input
+/>
 
-      {% if section.settings.align_logo == 'left' %}
-        <nav class="grid__item medium-up--one-half small--hide" id="AccessibleNav" role="navigation">
-          {% include 'site-nav', linklist: section.settings.main_linklist %}
-        </nav>
-      {% endif %}
+<input type="hidden" name="options[prefix]" value="last" aria-hidden="true" />
+
+<button type="reset" class="search-form__clear-action" aria-label="{{ 'general.search.clear_search_term' | t }}" data-search-page-predictive-search-clear>
+{% include 'icon-close' %}
+</button>
+
+<div class="predictive-search-wrapper" data-predictive-search-mount="default"></div>
+</div>
+
+<button type="submit" class="search-form__connected-submit" aria-label="{{ 'general.search.submit' | t }}" data-search-page-predictive-search-submit>
+{% include 'icon-search' %}
+</button>
+</div>
+</form>
+</nav>
+{% endif %}
 
       <div class="grid__item {% if section.settings.align_logo == 'left' %}medium-up--one-quarter{% else %}medium-up--one-third medium-up--push-one-third{% endif %} text-right site-header__icons{% if shop.customer_accounts_enabled %} site-header__icons--plus{% endif %}">
         <div class="site-header__icons-wrapper">
@@ -129,7 +168,12 @@
               </a>
             {% endif %}
           {% endif %}
-
+          
+          <div class=currency-div>
+          <h4 class=currency-title>Currency<h4>
+          <p class=currency>$ CAD</p>
+          </div>
+          
           <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
             {% include 'icon-cart' %}
             <span class="icon__fallback-text">{{ 'layout.cart.title' | t }}</span>
@@ -246,12 +290,14 @@
     </nav>
   </header>
 
-  {% if section.settings.align_logo == 'center' %}
-  <nav class="small--hide border-bottom" id="AccessibleNav" role="navigation">
-    {% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
-  </nav>
-  {% endif %}
 </div>
+
+<div class="menuHeader">
+  <nav class="small--hide border-bottom" id="AccessibleNav" role="navigation">
+{% include 'site-nav', linklist: section.settings.main_linklist, wrapper_class: 'site-nav--centered' %}
+  </nav>
+</div>
+
 
 
 
@@ -338,7 +384,7 @@
         "nb": "Logojustering",
         "nl": "Logo-uitlijning",
         "pl": "Wyrównanie logo",
-        "pt-BR": "Alinhamento do logo",
+        "pt-BR": "Alinhamento do logotipo",
         "pt-PT": "Alinhamento do logótipo",
         "sv": "Logojustering",
         "th": "การจัดวางโลโก้",
@@ -420,7 +466,7 @@
         "nb": "Logobilde",
         "nl": "Afbeelding van logo",
         "pl": "Obraz logo",
-        "pt-BR": "Imagem do logo",
+        "pt-BR": "Imagem do logotipo",
         "pt-PT": "Imagem do logótipo",
         "sv": "Logobild",
         "th": "รูปภาพโลโก้",
@@ -447,7 +493,7 @@
         "nb": "Tilpasset logobredde",
         "nl": "Aangepaste logo-breedte",
         "pl": "Niestandardowa szerokość logo",
-        "pt-BR": "Largura do logo personalizado",
+        "pt-BR": "Largura do logotipo personalizado",
         "pt-PT": "Largura de logótipo personalizada",
         "sv": "Anpassad logotypsbredd",
         "th": "ความกว้างของโลโก้แบบกำหนดเอง",

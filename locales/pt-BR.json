@@ -406,7 +406,7 @@
       "shop_link": "Comece a comprar",
       "print": "Imprimir este cartão-presente",
       "remaining_html": "{{ balance }} restante(s)",
-      "add_to_apple_wallet": "Adicionar ao app Wallet da Apple",
+      "add_to_apple_wallet": "Adicionar ao Apple Wallet",
       "qr_image_alt": "código QR - digitalizar para resgatar cartão de presente"
     }
   },
