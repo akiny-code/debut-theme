@@ -17,3 +17,16 @@ Changes to the theme discussed with the client include the following:
     - Repositioning the buttons on the image to the left
   - An icon that shows currency (and allows currency to be changed)
   - Simplify/update announcement bar 
+
+Current changes on the theme can be seen below:
+
+<img src="https://github.com/bcmclean/debut-theme/blob/master/changes-version-1.0.png" width="800" height="400">
+
+This new version includes a new banner image for a collection of their products (Larry Grossman signs).
+
+The following needs to be accomplished before the new theme is deployed:
+  - Improve responsiveness of menu bar
+  - Add two additional banner images
+
+Upcoming changes also include:
+  - Improved footer
