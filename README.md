@@ -1,6 +1,8 @@
 # debut-theme
 
-## Freelance Project to Update Existing Website
+[permission was given to use this ]
+
+## Updates to Debut Theme
 
 Client currently uses an outdated version of Debut. This version contains scss files, which is deprecated in themes on Shopify. The new version, contained in this repository, uses css instead.
 
