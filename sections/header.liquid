@@ -154,8 +154,13 @@ data-search-page-predictive-search-input
             {% include 'icon-search' %}
             <span class="icon__fallback-text">{{ 'layout.navigation.search' | t }}</span>
           </button>
-
-          {% if shop.customer_accounts_enabled %}
+          
+          <div class=site-header__icon site-header__account>
+            <h4 class=currency-title>Currency</h4>
+          	<h4 class=canadian-currency><p class=currency>$ CAD</p></h4>
+          </div>
+            
+            {% if shop.customer_accounts_enabled %}
             {% if customer %}
               <a href="{{ routes.account_url }}" class="site-header__icon site-header__account">
                 {% include 'icon-login' %}
@@ -168,11 +173,6 @@ data-search-page-predictive-search-input
               </a>
             {% endif %}
           {% endif %}
-          
-          <div class=currency-div>
-          <h4 class=currency-title>Currency<h4>
-          <p class=currency>$ CAD</p>
-          </div>
           
           <a href="{{ routes.cart_url }}" class="site-header__icon site-header__cart">
             {% include 'icon-cart' %}
