@@ -24,9 +24,5 @@ Current changes on the theme can be seen below:
 
 This new version includes a new banner image for a collection of their products (Larry Grossman signs).
 
-The following needs to be accomplished before the new theme is deployed:
-  - Improve responsiveness of menu bar
-  - Add two additional banner images
-
 Upcoming changes also include:
   - Improved footer
